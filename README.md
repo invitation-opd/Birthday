@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
             --color-gold: #FFD700;
             --color-light-gold: #FFEA9F;
             --color-cream: #FFFDD0;
-            --color-red: #FF0000; /* Definisi warna merah baru */
+            --color-red: #FF0000;
             --font-script: 'Great Vibes', cursive;
             --font-main: 'Poppins', sans-serif;
         }
@@ -31,7 +31,7 @@
         }
         
         /* ---------------------------------------------------------- */
-        /* Landing Page (CSS lainnya disingkat) */
+        /* Landing Page */
         /* ---------------------------------------------------------- */
         #landing-page {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--color-black); z-index: 99; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 1s ease-in-out; text-align: center;
@@ -69,7 +69,9 @@
         }
 
         /* Invitation Frame and Text Styling */
-        .invitation-frame { background: rgba(0, 0, 0, 0.85); border: 4px solid var(--color-gold); padding: 40px 30px; max-width: 500px; width: 90%; box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); border-radius: 5px; position: relative; }
+        .invitation-frame { 
+            background: rgba(0, 0, 0, 0.85); border: 4px solid var(--color-gold); padding: 40px 30px; max-width: 500px; width: 90%; box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); border-radius: 5px; position: relative; 
+        }
         .invitation-frame::before, .invitation-frame::after { content: ''; position: absolute; background: var(--color-gold); width: 30px; height: 4px; }
         .invitation-frame::before { top: -4px; left: -4px; }
         .invitation-frame::after { top: -4px; right: -4px; }
@@ -90,23 +92,53 @@
             font-weight: 400; 
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
         }
+        
         .details-section { margin-top: 20px; }
+        /* PERBAIKAN: Teks undangan dibuat lebih besar */
+        .invitation-intro-text {
+            margin-top:0; 
+            font-size: 1.2em; /* Diperbesar dari 0.9em */
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
         .detail-item { margin: 10px 0; font-size: 1.05em; color: white; line-height: 1.4; }
         .dresscode { font-size: 1.2em; font-weight: 700; color: white; margin-top: 25px; }
         .dresscode span { color: var(--color-gold); }
-        #countdown { margin: 30px 0 20px; padding: 15px 0; }
-        #countdown div { display: inline-block; margin: 0 8px; }
         
-        /* PERBAIKAN: Detik, Menit, Jam lebih besar dan merah */
+        /* ---------------------------------------------------------- */
+        /* PERBAIKAN: Countdown Timer CSS */
+        /* ---------------------------------------------------------- */
+        #countdown { 
+            margin: 30px 0 20px; 
+            padding: 15px 0; 
+            display: flex; /* Menggunakan Flexbox untuk tata letak yang lebih baik */
+            justify-content: center;
+            gap: 15px; /* Memberi jarak antar elemen */
+        }
+        #countdown > div { 
+            display: flex; /* Setiap div di dalam countdown menggunakan flex */
+            flex-direction: column; /* Angka di atas label */
+            align-items: center;
+            text-align: center;
+        }
         .time-value { 
             display: block; 
-            font-size: 2.5em; /* Dibuat sedikit lebih besar (dari 2em) */
+            font-size: 2.5em; 
             font-weight: 700; 
-            color: var(--color-red); /* Berwarna merah */
-            text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); /* Shadow merah */
+            color: var(--color-red); 
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); 
+            line-height: 1.1;
         }
-        
-        .time-label { font-size: 0.7em; color: white; }
+        .time-label { 
+            font-size: 0.9em; /* Dibuat sedikit lebih besar agar sejajar dengan nilai */
+            color: white; 
+            text-transform: uppercase;
+        }
+
+        /* ---------------------------------------------------------- */
+        /* Lokasi & Tombol (CSS lainnya disingkat) */
+        /* ---------------------------------------------------------- */
         .location-section { width: 100%; margin-top: 30px; }
         .map-container { border: 2px solid var(--color-gold); height: 250px; margin-top: 15px; overflow: hidden; box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
         .map-container iframe { width: 100%; height: 100%; border: none; }
@@ -147,7 +179,7 @@
             </div>
 
             <div class="details-section">
-                <p style="margin-top:0; font-size: 0.9em; color: rgba(255,255,255,0.9);">
+                <p class="invitation-intro-text">
                     We are thrilled to invite you to celebrate this special day.
                 </p>
                 
@@ -162,13 +194,14 @@
                 <div class="detail-item">
                     Black Owl Surabaya
                     <br>
-                    <span style="font-size:0.8em; opacity:0.8;">Jalan Bukit Mas No.A6, Dukuh Pakis, Surabaya (Contoh Alamat)</span>
+                    <span style="font-size:0.8em; opacity:0.8;">[Lokasi Pesta]</span>
                 </div>
 
                 <p class="dresscode">Dresscode: <span>BLACK GOLD</span></p>
             </div>
             
             <h3 style="color:var(--color-gold); font-size:1.1em; margin-bottom:10px;">Countdown to the Event</h3>
+            
             <div id="countdown">
                 <div><span class="time-value" id="days">00</span><span class="time-label">Days</span></div>
                 <div><span class="time-value" id="hours">00</span><span class="time-label">Hours</span></div>
@@ -266,20 +299,24 @@
         }
         
         // ----------------------------------------------------------
-        // Countdown Timer & Background Animation (NO CHANGE)
+        // Countdown Timer & Background Animation
         // ----------------------------------------------------------
         const targetDate = new Date("Oct 28, 2025 19:00:00").getTime(); 
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Mengabaikan Hari jika tidak perlu (Hanya tampilkan Jam, Menit, Detik jika kurang dari 24 jam)
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
             document.getElementById("days").innerHTML = days < 10 ? '0' + days : days;
             document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
             document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
             document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
             if (distance < 0) {
                 clearInterval(countdownFunction);
                 document.getElementById("countdown").innerHTML = "<h3 style='color:var(--color-gold);'>THE PARTY IS LIVE!</h3>";
