@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Littavya's 30th Birthday Invitation - Black Owl Surabaya</title>
+    <title>Lita's 30th Birthday Invitation - Black Owl Surabaya</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* ========================================================== */
@@ -160,7 +160,7 @@
 
     <div id="landing-page">
         <p class="intro-text">You are invited to the birthday celebration of</p>
-        <h1 class="intro-name">Littavya</h1>
+        <h1 class="intro-name">Lita</h1>
         <button class="main-cta-button" onclick="openInvitation()">Invitation</button>
     </div>
 
@@ -174,7 +174,7 @@
             
             <div class="header-content">
                 <p class="title-sub">Birthday Invitation</p>
-                <h1 class="title-name">Littavya</h1>
+                <h1 class="title-name">Lita</h1>
                 <h2 class="title-age">30</h2>
             </div>
 
@@ -193,8 +193,6 @@
                 
                 <div class="detail-item">
                     Black Owl Surabaya
-                    <br>
-                    <span style="font-weight: 700; color: var(--color-gold);">Room Jackson</span>
                     <br>
                     <span style="font-size:0.8em; opacity:0.8;">[Lokasi Pesta]</span>
                 </div>
@@ -237,7 +235,7 @@
             
         </div>
         
-        <p style="margin-top: 40px; font-size: 0.8em; color: #aaa; opacity:0.7;">See you at Room Jackson, Black Owl!</p>
+        <p style="margin-top: 40px; font-size: 0.8em; color: #aaa; opacity:0.7;">See you at Black Owl!</p>
 
     </div>
 
